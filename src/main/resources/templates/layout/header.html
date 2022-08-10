@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+
+<body>
+    <header>
+
+        <div class="row bg-secondary py-2 px-xl-5">
+            <div class="col-lg-6 d-none d-lg-block">
+                <div class="d-inline-flex align-items-center">
+                    <a class="text-dark" href="">FAQs</a>
+                    <span class="text-muted px-2">|</span>
+                    <a class="text-dark" href="">Help</a>
+                    <span class="text-muted px-2">|</span>
+                    <a class="text-dark" href="">Support</a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center text-lg-right">
+                <div class="d-inline-flex align-items-center">
+                    <a class="text-dark px-2" href="">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a class="text-dark px-2" href="">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a class="text-dark px-2" href="">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a class="text-dark px-2" href="">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a class="text-dark pl-2" href="">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center py-3 px-xl-5">
+            <div class="col-lg-3 d-none d-lg-block">
+                <a href="" class="text-decoration-none">
+                    <h1 class="m-0 display-5 font-weight-semi-bold"><span
+                            class="text-primary font-weight-bold border px-3 mr-1">E</span>Shopper</h1>
+                </a>
+            </div>
+
+            <div class="nav col-lg-7 col-7 mr-auto py-0">
+                <a th:href="@{/product/index}" class="nav-item nav-link active">Home</a>
+                <a th:href="@{/product/shop}" class="nav-item nav-link">Shop</a>
+                <li th:if="${#request.isUserInRole('ADMIN') or #request.isUserInRole('USER')}">
+                    <a href="/admin/index" class="nav-item nav-link">Manager</a>
+                </li>
+
+
+                 <a th:href="@{/product/contact}" class="nav-item nav-link">Contact</a>
+                 <a th:href="@{/order/checkout}" class="nav-item nav-link">Checkout</a>
+                 <a th:href="@{/order/list}" class="nav-item nav-link">History</a>
+                 <th:block th:unless="${#request.remoteUser}">
+                    <a href="/security/login" class="nav-item nav-link">Login</a>
+                 </th:block>
+                
+
+                  <a href="/security/logout" ng-click="cart.clear()" class="nav-item nav-link">logout</a>
+
+            </div>
+
+
+
+            <div class="col-lg-2 col-2 text-right">
+                <ul th:if="${#request.remoteUser}">
+                    <li>welcome [[${#request.remoteUser}]]</li>
+                </ul>
+        
+                <a th:href="@{/product/cart}" class="btn border">
+                    <i class="fas fa-shopping-cart text-primary"></i>
+                    <span class="badge">{{cart.count}} SP tổng giá là {{cart.amount | number : 2}}</span>
+                </a>
+            </div>
+        </div>
+        </div>
+        <!-- Topbar End -->
+
+
+        <!-- Navbar Start -->
+
+
+
+
+    </header>
+
+</body>
+
+</html>

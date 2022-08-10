@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{/layout/index :: dynamic(~{::main})}">
+<body>
+    <main>
+        <div class="container pt-5">
+ 
+            <div class="" th:replace="~{/cart/cart_info :: shopping_cart}"></div>
+            <div class=" mb-4 border" id="shipping-address">
+                <div class="card-header bg-secondary ">
+                    <h4 class="font-weight-semi-bold m-0">Order Pushcharsing</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row form-group">
+                        <div class="col-6 custom-control">
+                            <label>Người đặt</label>
+                             <div  class="form-control" id="acount" > [[${#request.remoteUser}]]</div>
+                             
+                        </div>
+                        <div class="col-6  custom-control">
+                            <label>Create Date</label>
+                            <div type="text" class="form-control"  >{{order.createdate |date : 'dd/MM/yyyy'}}</div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-5">
+                        <label>Address</label>
+                        <textarea cols="60"  maxlength="200" minlength="2"  ng-model="order.address"></textarea>
+                    </div>
+                    <div class="col-6">
+                        <label>Totalmoney:</label>
+                        <span class="text-danger"  id="totalmoney">
+                           {{cart.amount}} VND
+                        </span>
+                    </div>
+                </div>
+                <div class="col-3 card-footer  border-secondary bg-transparent">
+                    <button ng-click="order.pushing()" class="btn btn-lg  btn-primary font-weight-bold ">submit</button>
+                </div>
+            </div>
+           
+      </div>
+
+
+
+    </main>
+</body>
+
+</html>

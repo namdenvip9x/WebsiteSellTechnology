@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+    <main>
+       <form action="/home/login" method="post">
+          <input name="acount" placaholder="acounts">
+          <br>
+          <input name="password" placaholder="password">
+          <input type="checkbox" name="remember"> remember
+          <br>
+          <button>login</button>
+       </form>
+       <a href="/login/logoff">out</a>
+       <a href="/oauth2/authorization/google">Gogole</a>
+       <a href="/oauth2/authorization/facebook">Facebook</a>
+    </main>
+</body>
+</html>

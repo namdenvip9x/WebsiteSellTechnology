@@ -1,0 +1,90 @@
+<main class="container mt-4" ng-controller="Ctrlcate" >
+ 
+    <h3 class="text-center">Quản lý danh mục</h3>
+    <div  class="row">
+
+        <div class="col-6">
+            <form  ng-submit="onSubmitForm($event)">
+            
+                <div>
+                    <label>tên danh mục</label>
+                    <input class="form-control"  ng-model="cate.namecategories"  />
+                </div>
+                
+                <div class="form-select">
+				<label>acount</label>
+					<select  class="form-control" ng-model="cate.user.acount">
+						<option ng-repeat="c in items" ng-value="c.acount">{{c.acount}}</option>
+					</select>
+				</div>
+
+                <div class="mt-3">
+                    <button ng-click="create()" class="btn btn-primary">save</button>
+                    <button ng-click="update()" class="btn btn-primary">update</button>
+                    <button ng-click="delete(cate)" class="btn btn-primary">delete</button>
+                    <button ng-click="reset()" class="btn btn-primary">reset</button>
+                </div>
+            </form>
+
+        </div>
+
+
+        <div class="col-6">
+            <div class="form-table mt-4">
+                <table class="table table-striped table-bordered caption-top">
+                    <thead>
+                        <tr class="text-center">
+                            <th>id</th>
+                            <th>name</th>
+                            <th colspan="2">Thao Tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="cates in category">
+                            <td>{{cates.id}}</td>
+                            <td>{{cates.namecategories}}</td>
+                            
+                            <td>
+                                <button ng-click="edit(cates)" class=" ">
+                                    <i class="fas fa-pen"></i>
+                                 </button>
+                            </td>
+                            <td>
+                                <button ng-click="delete(cates)" class="" >
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </td>
+
+                        </tr>
+                        <div class="modal fade" id="delete_${computer.id}" data-bs-keyboard="false" tabindex="-1"
+                            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <!-- <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h2 class="Modal-Title text-center">Delete Computer</h2>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <span>Bạn có muốn xóa sản phẩm này ?</span>
+                                        <div class="modal-footer flex-column border-top-0 ">
+                                            <a class="btn btn-primary btn-lg w-100 mx-0 mb-2"
+                                                href="delete/${computer.id }">Yes</a>
+                                            <button class="btn btn-light btn-lg w-100 mx-0" type="button"
+                                                data-bs-dismiss="modal">No</button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+
+
+                    </tbody>
+
+
+                </table>
+            </div>
+        </div>
+    </div>
+</main>

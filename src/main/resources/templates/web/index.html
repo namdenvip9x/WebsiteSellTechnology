@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body> 
+   <nav th:replace="~{/web/menu :: nav}"></nav>
+   <hr>
+   <h2>hello</h2>
+   <span th:text="${message}"></span> 
+   <hr>
+   <nav th:replace="~{/web/info ::main}"></nav>
+   <nav th:replace="~{/home/login ::main}"></nav>
+</body>
+</html>

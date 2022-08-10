@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>layout</title>
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<meta content="Free HTML Templates" name="keywords">
+	<meta content="Free HTML Templates" name="description">
+
+	<!-- Favicon -->
+	<link href="img/favicon.ico" rel="icon">
+
+	<!-- Google Web Fonts -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+		rel="stylesheet">
+
+	<!-- Font Awesome -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+	<!-- Libraries Stylesheet -->
+	<link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+	<link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+
+	<!-- Customized Bootstrap Stylesheet -->
+	<link href="css/style.css" rel="stylesheet">
+	<script src="js/angular.min.js"></script>
+	<script src="js/angular-route.js"></script>
+	<script src="js/angular-animate.js"></script>
+</head>
+
+<body ng-app="myApp">
+	<div>
+		<!-- Topbar Start header -->
+
+		<div class="row bg-secondary py-2 px-xl-5">
+			<div class="col-lg-6 d-none d-lg-block">
+				<div class="d-inline-flex align-items-center">
+					<a class="text-dark" href="">FAQs</a>
+					<span class="text-muted px-2">|</span>
+					<a class="text-dark" href="">Help</a>
+					<span class="text-muted px-2">|</span>
+					<a class="text-dark" href="">Support</a>
+				</div>
+			</div>
+			<div class="col-lg-6 text-center text-lg-right">
+				<div class="d-inline-flex align-items-center">
+					<a class="text-dark px-2" href="">
+						<i class="fab fa-facebook-f"></i>
+					</a>
+					<a class="text-dark px-2" href="">
+						<i class="fab fa-twitter"></i>
+					</a>
+					<a class="text-dark px-2" href="">
+						<i class="fab fa-linkedin-in"></i>
+					</a>
+					<a class="text-dark px-2" href="">
+						<i class="fab fa-instagram"></i>
+					</a>
+					<a class="text-dark pl-2" href="">
+						<i class="fab fa-youtube"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="row align-items-center py-3 px-xl-5">
+			<div class="col-lg-3 d-none d-lg-block">
+				<a href="" class="text-decoration-none">
+					<h1 class="m-0 display-5 font-weight-semi-bold"><span
+							class="text-primary font-weight-bold border px-3 mr-1">E</span>Shopper</h1>
+				</a>
+			</div>
+
+			<div class="nav col-lg-7 col-7 mr-auto py-0">
+				<a href="/product/index" class="nav-item nav-link active">Home</a>
+                <div>
+                  <a href="#!users" class="nav-item nav-link active">Account</a>
+                </div>
+				<a href="#!product" class="nav-item nav-link active">Products</a>
+				<a href="#!categories" class="nav-item nav-link active">Categories</a>
+				<a  th:if="${#request.isUserInRole('USER')"
+				 href="#!athotiting" class="nav-item nav-link active">Athorities</a>
+				
+
+
+				<!-- <a th:href="@{/product/contact}" class="nav-item nav-link">Contact</a>
+
+				<a href="/security/login" class="nav-item nav-link">Login</a>
+
+				<a href="/security/logout" class="nav-item nav-link">logout</a> -->
+			</div>
+
+
+
+			<div class="col-lg-2 col-2 text-right">
+				<ul th:if="${#request.remoteUser}">
+					<li>welcome {{item.fullname}}</li>
+				</ul>
+				<a href="" class="btn border">
+					<i class="fas fa-heart text-primary"></i>
+					<span class="badge">0</span>
+				</a>
+				<a href="" class="btn border">
+					<i class="fas fa-shopping-cart text-primary"></i>
+					<span class="badge">0</span>
+				</a>
+			</div>
+		</div>
+	</div>
+	<!-- - header -->
+
+
+	<!-- aside -->
+
+
+
+	<main ng-view> </main>
+
+
+
+	<!-- Footer Start -->
+	<div>
+		<div class="container-fluid text-dark mt-5 pt-5">
+			<div class="row border-top border-light mx-xl-5 py-4">
+				<div class="col-md-6 px-xl-0">
+					<p class="mb-md-0 text-center text-md-left text-dark">
+						&copy; <a class="text-dark font-weight-semi-bold" href="#">Your Site Name</a>. All Rights
+						Reserved. Designed
+						by
+						<a class="text-dark font-weight-semi-bold" href="https://htmlcodex.com">HTML Codex</a>
+					</p>
+				</div>
+				<div class="col-md-6 px-xl-0 text-center text-md-right">
+					<img class="img-fluid" src="img/payments.png" alt="">
+				</div>
+			</div>
+			<!-- Footer End -->
+		</div>
+		<a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+	</div>
+
+
+		<!-- Contact Javascript File -->
+		<script src="mail/jqBootstrapValidation.min.js"></script>
+		<script src="mail/contact.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/popper.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.js"></script>
+		<script type="text/javascript" src="js/mdb.min.js"></script>
+	    <script   src="js/sweetalert2.min.js"></script>
+		
+		<script type="text/javascript" src="routefile.js"></script>
+
+		<script type="text/javascript" src="/asserts/admin/product/Ctrlproduct.js"></script>
+		<script type="text/javascript" src="/asserts/admin/categories/Ctrlcate.js" ></script>
+		<script type="text/javascript" src="/asserts/admin/users/Ctrluser.js"></script>
+		<script type="text/javascript" src="/asserts/admin/athotiting/Ctrlathotities.js"></script>
+		
+		<!-- Template Javascript -->
+		<script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>

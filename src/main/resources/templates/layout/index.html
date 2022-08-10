@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="dynamic(main)">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>website</title>
+    <link href="/img/favicon.ico" rel="icon">
+    <!--- BOOTTRAPSS-->
+
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+	<link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <!-- Libraries Stylesheet -->
+    <link href="/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="/css/style.css" rel="stylesheet">
+    
+    <script src="/js/sweetalert2.min.js"></script>
+    <script src="/js/angular.min.js"></script>
+    <script src="/js/angular-route.js"></script>
+    <script src="/js/angular-animate.js"></script>
+</head>
+
+<body ng-app="shoping-cart" ng-controller="shoping-ctrl">
+    <div class="container-fluid" >
+        <header class="row" th:replace="~{/layout/header :: header}"></header>
+
+        <!-- - header -->
+
+        <nav th:replace="${main}"></nav>
+
+        <footer class="row" th:replace="~{/layout/footer :: footer}">
+            <!-- Footer End -->
+        </footer>
+
+    </div>
+
+    <script src="/asserts/jscart/shopping-cart.js"></script>
+    <!-- JavaScript Libraries -->
+
+       <script type="text/javascript" src="/asserts/admin/product/Ctrlproduct.js"></script>
+		<script type="text/javascript" src="/asserts/admin/categories/Ctrlcate.js" ></script>
+		<script type="text/javascript" src="/asserts/admin/users/Ctrluser.js"></script>
+		<script type="text/javascript" src="/asserts/admin/athotiting/Ctrlathotities.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="/lib/easing/easing.min.js"></script>
+    <script src="/lib/owlcarousel/owl.carousel.min.js"></script>
+
+
+
+
+    <!-- Contact Javascript File -->
+    <script src="/mail/jqBootstrapValidation.min.js"></script>
+    <script src="/mail/contact.js"></script>
+
+
+    <!--  Javascript angular-->
+    <script src="/js/main.js"></script>
+   
+
+</body>
+
+</html>
